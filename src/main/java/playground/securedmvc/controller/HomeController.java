@@ -9,7 +9,8 @@ public class HomeController {
 
     @RequestMapping("/")
     public ModelAndView welcome() {
-        ModelAndView index = new ModelAndView("index");
+        ModelAndView index = new ModelAndView("layouts/layout");
+        index.addObject("template", "index");
         index.addObject("name", "MVC");
         return index;
     }

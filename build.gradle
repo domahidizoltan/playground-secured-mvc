@@ -44,6 +44,8 @@ dependencies {
         "org.springframework.boot:spring-boot-starter-thymeleaf",
         "org.springframework.boot:spring-boot-starter-web",
         "org.flywaydb:flyway-core:4.2.0",
+
+        "org.springframework.boot:spring-boot-devtools", //use for development
     )
 
     runtime (

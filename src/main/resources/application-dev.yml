@@ -4,3 +4,8 @@ db:
   user: admin
   pass: pass
   database: securedmvc
+
+
+spring:
+  thymeleaf:
+    cache: false
