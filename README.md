@@ -1,0 +1,1 @@
+A sample project to play around with Spring MVC, Thymeleaf and Spring Security.
