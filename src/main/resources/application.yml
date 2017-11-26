@@ -1,5 +1,9 @@
-spring:
+security:
+  basic:
+    enabled: false
 
+
+spring:
   profiles:
     active: dev
 
