@@ -1,27 +1,41 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.8.RELEASE'
+		springBootVersion = '2.0.0.M6'
 	}
 	repositories {
-		mavenCentral()
+        maven {
+            url 'https://repo.spring.io/libs-milestone'
+        }
+        mavenLocal()
+        mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE"
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
 	}
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group = 'playground'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+	maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
+    mavenLocal()
+    mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-starter-parent:$springBootVersion"
+    }
+}
 
 dependencies {
     compile (
@@ -29,15 +43,15 @@ dependencies {
         "org.springframework.boot:spring-boot-starter-security",
         "org.springframework.boot:spring-boot-starter-thymeleaf",
         "org.springframework.boot:spring-boot-starter-web",
-        //"org.flywaydb:flyway-core",
+        //"org.flywaydb:flyway-core:4.2.0",
     )
 
     runtime (
-        "mysql:mysql-connector-java",
+        "mysql:mysql-connector-java:8.0.8-dmr",
     )
 
 	compileOnly (
-        "org.projectlombok:lombok",
+        "org.projectlombok:lombok:1.16.18",
     )
 
 	testCompile (
