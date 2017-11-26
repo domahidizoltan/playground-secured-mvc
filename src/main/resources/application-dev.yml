@@ -1,0 +1,6 @@
+db:
+  vendor: mysql
+  host: localhost
+  user: admin
+  pass: pass
+  database: securedmvc

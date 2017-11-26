@@ -1,0 +1,21 @@
+spring:
+
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:${db.vendor}://${db.host}/${db.database}
+    username: ${db.user}
+    password: ${db.pass}
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+flyway:
+  enabled: true
+  locations: db/migration/${db.vendor}
+  baseline-on-migrate: true
+  baseline-version: 1
