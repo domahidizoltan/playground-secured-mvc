@@ -4,5 +4,13 @@
 
     <h1 th:text="#{index.hello(${name})}"></h1>
 
+    <p th:text="${authorities}"></p>
+
+    <h2 th:if="${#lists.contains(authorities, 'auth_employee')}">This is visible only for a employees.</h2>
+
+    <h3 th:if="${#lists.contains(authorities, 'auth_employee') or #lists.contains(authorities, 'auth_manager')}">This is visible for employees and managers.</h3>
+
+    <h4 th:if="${#lists.contains(authorities, 'auth_manager')}">This is visible only for managers.</h4>
+
 </body>
 </html>

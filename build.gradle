@@ -58,6 +58,6 @@ dependencies {
 
 	testCompile (
         "org.springframework.boot:spring-boot-starter-test",
-        //"org.springframework.security:spring-security-test",
+        "org.springframework.security:spring-security-test",
     )
 }

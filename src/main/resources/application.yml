@@ -1,6 +1,11 @@
+db:
+  vendor: mysql
+  database: securedmvc
+
 spring:
   profiles:
     active: dev
+    #disabled-security
 
   datasource:
     url: jdbc:${db.vendor}://${db.host}/${db.database}
@@ -11,6 +16,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+        enable_lazy_load_no_trans: true
+
+    hibernate:
+      ddl-auto: none
 
 
 flyway:

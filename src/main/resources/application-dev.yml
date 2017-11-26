@@ -1,11 +1,17 @@
+logging:
+  level:
+    playground: DEBUG
+
+
 db:
-  vendor: mysql
   host: localhost
   user: admin
   pass: pass
-  database: securedmvc
 
 
 spring:
   thymeleaf:
     cache: false
+
+flyway:
+  enabled: false
